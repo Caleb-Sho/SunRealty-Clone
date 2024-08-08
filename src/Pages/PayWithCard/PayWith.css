@@ -1,0 +1,87 @@
+.wholeCntDivs{
+    min-width: 300px;
+    max-width: 500px;
+    /* margin: auto; */
+    /* padding: 2%; */
+    height: 100vh;
+
+}
+.theAll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+.theAllImg{
+    display: none;
+    /* width:  */
+}
+.tflexflex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    gap: 50%;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+.tflexflex h6{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+.imageForm{
+    margin-top: 20px !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.imageForm img{
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 100px !important;
+    margin: auto;
+}
+.imageForm form{
+    margin-top: 20px;
+    margin: auto;
+    padding: 10px;
+    width: 93%;
+}
+.inputNot{
+    width: 100%;
+    margin-top: 30px;
+    border: 0;
+    border-bottom: 2px solid rgb(223, 220, 220);
+    appearance: none !important;
+    outline: none;
+}
+
+.theBotom{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    gap: 20px;
+    margin-top: 20px;
+}
+.theBotom p{
+    margin: 0;
+    font-size: 15px;
+    text-wrap: nowrap;
+
+}
+.imageForm form button{
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 100px !important;
+    border: 0;
+    background-color: rgb(155, 146, 79);
+    color: white;
+    margin-top: 50px;
+    height: 35px;
+    font-weight: 600;
+}

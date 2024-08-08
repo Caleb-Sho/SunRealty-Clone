@@ -1,0 +1,337 @@
+/* src/components/FeaturedListings/FeaturedListings.css */
+body {
+  font-family: "Lato", sans-serif!important;
+}
+.featured-listings {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .featured-listings .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .featured-listings h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .listings-grid {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))!important;
+    gap: 25px;
+  }
+  
+  .listing-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  
+  .listing-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .listing-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .listing-card h3 {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 18px;
+    color: #008998;;
+    text-decoration: none;
+  }
+  
+  .listing-card p {
+    font-size: 1rem;
+    margin: 10px 0 10px 0;
+    color: #666;
+    margin-top: 0!important;
+  }
+  .listings_items{
+    background-color: rgba(218, 241, 245, 0.5);
+    position: relative;
+    border-radius: 0 0 4px 4px;
+    margin-top: 14px;
+  }
+  .listing-card button{
+    display: inline-block;
+    width: 94%;
+    margin: 5px 10px;
+    font-size: 17px;
+    padding: 9px 18px 11px 18px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #fff;
+    border: 1px solid #9A9A9A;
+    color: #8B7627;
+    letter-spacing: .57px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: top;
+    line-height: 1;
+  }
+  .saltpalaca{
+    margin: 0 20px;
+    padding: 8px 10px 4px;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    border-radius: 5px;
+    top: -30px;
+  }
+  .saltpalaca h3{
+    margin: 5px ;
+  }
+  .saltpalaca p{
+    margin: 5px ;
+  }
+  .rowFunctions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 90%; */
+  }
+  .filterBtn{
+    color: white;
+    background: #008998;
+    font-weight: bold;
+    letter-spacing: .075em;
+    padding: 15px 12px;
+    font-size: 17px;
+    text-decoration: none;
+    /* width: 100%; */
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 0;
+    
+  }
+  
+  .relativeDiv{
+    position: relative;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+        /* width: 25%; */
+        /* float: left; */
+  }
+  .relatriveDiv{
+    /* position: relative; */
+        /* padding-left: 15px;
+        padding-right: 15px; */
+        /* width: 25%; */
+        /* float: left; */
+        width: auto;
+  }
+  .relativeDiv label{
+    position: absolute;
+  top: 50%;
+  left: 17px;
+  transform: translateY(-50%);
+  color: #272F2D; /* Placeholder color */
+  font-size: 18px;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+
+  /* font-size: 18px; */
+  }
+  .labelDiv{
+    display: flex;
+    /* gap: 50px; */
+    justify-content: space-between;
+    align-items: center;
+    gap: 40%;
+    width: 100%;
+    margin: auto;
+  }
+  .relativeDiv input{
+    -webkit-appearance: none!important;
+    -moz-appearance: textfield!important;
+    appearance: none!important;
+    box-shadow: none;
+    border-radius: 5px;
+    border: solid 1px rgb(154, 154, 154);
+    background: #fff;
+    height: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(39, 47, 45, 0.1);
+    margin-bottom: 0;
+    padding-left: 8px;
+    letter-spacing: normal;
+    position: relative!important;
+    z-index: 0!important;
+    outline: none;
+  }
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .relativeDiv input:focus + label,
+.relativeDiv input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 10px;
+  font-size: 12px;
+  color: #333; 
+  transform: translateY(-100%);
+  
+}
+
+.relativeDiv input:focus {
+  border-color: #333; /* Focus border color */
+}
+
+/* Hide default placeholder by making text transparent */
+.relativeDiv input[type="date"]::placeholder {
+  color: transparent; /* Makes the placeholder text transparent */
+  display: none!important;
+  z-index: -1000!important;
+}
+
+/* For older versions of Firefox */
+.relativeDiv input[type="date"]::-moz-placeholder {
+  color: transparent;
+  display: none!important;
+  z-index: -1000!important;
+}
+
+/* For older versions of Internet Explorer */
+.relativeDiv input[type="date"]::-ms-input-placeholder {
+  color: transparent;
+  display: none!important;
+  z-index: -1000!important;
+}
+.rowFunctions select{
+  /* -webkit-appearance: none; */
+  box-shadow: none;
+  border-radius: 5px;
+  border: solid 1px #9A9A9A;
+  background: #fff;
+  height: 45px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #272F2D;
+  margin-bottom: 0;
+  padding-left: 8px;
+  letter-spacing: normal;
+}
+.searchBtn{
+  display: block;
+    background-color: #00B3C9;
+    font-family: "Lato", sans-serif;
+    letter-spacing: .1em;
+    font-weight: 550;
+    transition-property: color, background-color, border-color;
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+    text-align: center;
+    line-height: 1.3 !important;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    height: auto;
+    text-decoration: none;
+    min-height: 45px;
+    font-size: 14px;
+    padding: 13px 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 19px;
+    width: 160%;
+    margin-bottom: 0;
+    /* width: 100%; */
+    outline: none;
+}
+.rowFunctions p{
+  font-size: 17px;
+  font-weight: 650;
+  color: #00B3C9;
+  margin-left: 100px!important;
+  margin-right: 10px!important;
+}
+.dateFlex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+  gap: 10px;
+  
+}
+  
+@media (max-width: 800px){
+  .rowFunctions{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    gap: 17px;
+    
+    width: 90%;
+  }
+  .dateFlex{
+    width: 100%;
+    gap: 6px;
+  justify-content: center;
+  width: 100%!important;
+  max-width: 100%!important;
+  }
+  
+  .relatriveDiv{
+    width: 100%!important;
+    margin: 0;
+  }
+  .relativeDiv{
+    width: 100%!important;
+    margin: 0;
+  }
+  .rowFunctions button{
+    width: 100%!important;
+    margin: 0;
+  }
+  .relativeDiv select{
+    width: 100%!important;
+    margin: 0;
+  }
+  .rowFunctions p{
+    width: 100%;
+    text-align: center;
+    margin: 0!important;
+    margin-top: 10px!important;
+  }
+  .container1{
+    margin-top: 30px;
+    width: 93%;
+    margin: auto;
+  }
+  .searchBtn{
+    width: 100%;
+    margin: 0;
+  }
+  .relativeDiv input{
+    width: 100%;
+  }
+}

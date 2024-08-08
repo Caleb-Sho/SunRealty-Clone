@@ -1,0 +1,218 @@
+/* src/styles/ReservationSearchForm.css */
+.reservation-search-form {
+      flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 520px;
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    width: 520px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 10px;
+    margin-bottom: 0rem!important;
+    padding-top: 0!important;
+    margin: auto;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.reservation-search-form h2 {
+  background-color: rgb(230, 229, 229);
+    border-bottom: 1px solid rgb(196, 196, 196);
+    color: var(--bs-card-cap-color);
+    margin-bottom: 0;
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0  0;
+
+}
+
+.reservation-search-form .form-group {
+  margin-bottom: 20px!important;
+  display: flex;
+  justify-content: center!important;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+  /* padding-right: 10px!important; */
+  /* margin-right: !important; */
+  gap: 20px;
+}
+
+.reservation-search-form label {
+  font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding-bottom: calc(.375rem + 1px);
+    padding-top: calc(.375rem + 1px);
+    font-weight: 700;
+    text-wrap: nowrap;
+    /* position: relative; */
+    margin-left: auto!important;
+}
+
+.reservation-search-form input {
+  width: 300px!important;
+  /* margin-right: 0!important; */
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+  /* border-radius: 4px; */
+  font-size: 15px;
+
+  appearance: none;
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .375rem;
+    color: #333;
+    display: block;
+    /* font-size: 1rem; */
+    font-weight: 400;
+    line-height: 1.5;
+    /* padding: .375rem .75rem; */
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+
+.thetopDIvf h5{
+  text-align: right;
+  color: rgb(50, 146, 201);
+  font-size: 18px;
+  font-weight: 600;
+}
+.thetopDIvf{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  margin-bottom: 10px !important;
+  padding-bottom: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.buttonbutton{
+    text-align: right;
+    box-sizing: border-box;
+    cursor: pointer;
+    /* margin-right: 10px; */
+    width: 85%;
+    margin: auto;
+    font-size: 14px !important;
+}
+.reset-button{
+  border: 1px solid !important;
+  --bs-btn-padding-x: 0.75rem;
+    --bs-btn-padding-y: 0.375rem;
+    --bs-btn-font-family: ;
+    --bs-btn-font-size: 1rem;
+    --bs-btn-font-weight: 400;
+    --bs-btn-line-height: 1.5;
+    --bs-btn-color: #333;
+    --bs-btn-bg: transparent;
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: transparent;
+    --bs-btn-border-radius: 0.375rem;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15), 0 1px 1px rgba(0, 0, 0, .075);
+    --bs-btn-disabled-opacity: 0.65;
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+    background-color: var(--bs-btn-bg);
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    color: var(--bs-btn-color);
+    cursor: pointer;
+    display: inline-block;
+    font-family: var(--bs-btn-font-family);
+    font-size: var(--bs-btn-font-size);
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    text-align: center;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+}
+.reset-button:hover{
+  background-color: black;
+  color: white;
+}
+.search-button{
+  margin-left: 5px;
+  border: 1px solid !important;
+  color: #fff !important;
+  background-color: rgb(108, 154, 240) !important;
+  --bs-btn-padding-x: 0.75rem;
+    --bs-btn-padding-y: 0.375rem;
+    --bs-btn-font-family: ;
+    --bs-btn-font-size: 1rem;
+    --bs-btn-font-weight: 400;
+    --bs-btn-line-height: 1.5;
+    --bs-btn-color: #333;
+    --bs-btn-bg: transparent;
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: transparent;
+    --bs-btn-border-radius: 0.375rem;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15), 0 1px 1px rgba(0, 0, 0, .075);
+    --bs-btn-disabled-opacity: 0.65;
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+    background-color: var(--bs-btn-bg);
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    color: var(--bs-btn-color);
+    cursor: pointer;
+    display: inline-block;
+    font-family: var(--bs-btn-font-family);
+    font-size: var(--bs-btn-font-size);
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    text-align: center;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+}
+.search-button:hover{
+  background-color: rgb(4, 31, 83) !important;
+}
+
+@media(max-width: 800px){
+  .thetopDIvf{
+    display: block;
+    /* border-bottom: 1px solid rgb(192, 192, 192); */
+    margin-bottom: 10px;
+    width: 97%;
+  }
+  .reservation-search-form {
+    flex-shrink: 0;
+  margin-top: var(--bs-gutter-y);
+  max-width: 320px;
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  width: 320px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 10px;
+  margin-bottom: 0rem!important;
+  padding-top: 0!important;
+  margin: auto;
+  height: auto;
+  padding-bottom: 20px;
+}
+.reservation-search-form .form-group {
+  margin-bottom: 10px!important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center!important;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+  /* padding-right: 10px!important; */
+  /* margin-right: !important; */
+  gap: 5px;
+}
+
+}
