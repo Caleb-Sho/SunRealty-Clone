@@ -7,7 +7,7 @@ import { IoMdShare } from "react-icons/io";
 const Hero = () => {
   return (
     <section className="hero">
-      <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8fR62ArRHk4_uizCOq-vyWZMbS-s6WwWyr2bVHXrSZXlkxP6y'} />
+      <img src={'https://www.sunrealtync.com/sites/default/files/styles/og_image/public/page-banners/untitled_2_of_26.jpg'} />
       <div className='Headersbtns'>
         <h4>
           Nag Head Rentals
