@@ -1,6 +1,7 @@
 /* src/components/FeaturedListings/FeaturedListings.css */
 body {
   font-family: "Lato", sans-serif!important;
+  overflow-x: hidden !important;
 }
 .featured-listings {
     padding: 50px 0;
