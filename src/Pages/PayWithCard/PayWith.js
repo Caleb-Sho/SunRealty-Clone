@@ -113,7 +113,7 @@ function PayWith() {
                         <p>Save your card information, it's safe</p>
                     </div>
 
-                    <Link to='/payment/search'><button type='submit'>Book Reservation</button> </Link> 
+                    <Link to='/payment/search'><button type='submit'>Book </button> </Link> 
                 </form>
             </div>
         </div>
