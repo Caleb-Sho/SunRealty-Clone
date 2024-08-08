@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './PayWith.css';
 import { IoIosArrowBack } from "react-icons/io";
 import newMob from '../../Assets/NewMob.png';
+import { Link } from 'react-router-dom';
 
 function PayWith() {
     const [cardNumber, setCardNumber] = useState('');
@@ -62,6 +63,7 @@ function PayWith() {
     };
 
     return (
+        <div style={{width: '100%', backgroundColor: 'rgb(255, 217, 0, 0.3)'}}>
         <div className='wholeCntDivs'>
             <div className='tflexflex'>
                 <IoIosArrowBack />
@@ -99,9 +101,10 @@ function PayWith() {
                         <p>Save your card information, it's safe</p>
                     </div>
 
-                    <button type='submit'>Pay Now</button>
+                    <Link to='/payment/search'> <button type='submit'>Pay Now</button> </Link>
                 </form>
             </div>
+        </div>
         </div>
     );
 }

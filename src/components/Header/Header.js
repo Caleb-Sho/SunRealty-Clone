@@ -97,7 +97,7 @@ const Header = () => {
                     <div className='columnflexProp'>
                         <div className='theflexflex'>
                             <div className='disappearTxt'><p>Login</p></div>
-                            <Link to='/payment/search'> <div className='disappearTxt'><p>Payments</p></div> </Link>
+                            <Link to='/payment'> <div className='disappearTxt'><p>Payments</p></div> </Link>
                             <div className='disappearTxt'><p>My Trips</p></div>
                             <div className='disappearTxt'><p>(0) My Favorites</p></div>
                             <div className='disappearTxt'><p><a href="tel:(206) 414-8973">(206) 414-8973 </a> </p></div>
@@ -288,7 +288,7 @@ const Header = () => {
                 </div>
                 <div className='mobileHeader'>
                                 <div><p>Login</p></div>
-                                <Link to='/payment/search'> <div><p>Pay</p></div> </Link>
+                                <Link to='/payment'> <div><p>Pay</p></div> </Link>
                                 <div><p>Trips</p></div>
                                 <div><p> <FaHeart />(0)</p></div>
                                 <div className='mobile_a'><a href="tel:(206) 414-8973"><FaHeadset /></a></div>
