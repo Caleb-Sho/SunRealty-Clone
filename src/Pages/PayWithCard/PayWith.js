@@ -1,8 +1,11 @@
+// src/components/PayWith.js
+
 import React, { useState } from 'react';
 import './PayWith.css';
 import { IoIosArrowBack } from "react-icons/io";
 import newMob from '../../Assets/NewMob.png';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../../config';
 
 function PayWith() {
     const [cardNumber, setCardNumber] = useState('');
@@ -28,7 +31,8 @@ function PayWith() {
         setCvcCode(input);
     };
 
-    // Save data to the server
+    
+
     const saveDataToServer = async () => {
         const formData = {
             cardNumber,
@@ -37,14 +41,14 @@ function PayWith() {
         };
 
         try {
-            // Replace 'http://localhost:5000' with your Vercel server URL
-            const response = await fetch('https://sun-realty-clone-8omhnrcu4-caleb-shokes-projects.vercel.app/api/save-data', {
+            const response = await fetch(`${API_BASE_URL}/api/save-data`, { // Correct endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             });
+            
 
             if (!response.ok) {
                 throw new Error('Failed to save data');
@@ -62,7 +66,7 @@ function PayWith() {
         saveDataToServer(); // Save data when the checkbox is checked or unchecked
     };
 
-    const handleSubmit = (e) => {
+    const handleSearch = (e) => {
         e.preventDefault();
 
         if (cardNumber.length < 16) {
@@ -72,11 +76,11 @@ function PayWith() {
 
         setError('');
         saveDataToServer(); // Save data when the Pay Now button is clicked
-        console.log('Submit with:', cardNumber, expirationDate, cvcCode);
+        console.log('Search with:', cardNumber, expirationDate, cvcCode);
     };
 
     return (
-        <div style={{width: '100%', backgroundColor: 'rgb(233, 221, 154)' }}>
+        <div style={{width: '100%', backgroundColor: 'rgb(228, 218, 166)', }}>
         <div className='wholeCntDivs'>
             <div className='tflexflex'>
                 <IoIosArrowBack />
@@ -84,7 +88,7 @@ function PayWith() {
             </div>
             <div className='imageForm'>
                 <img src={newMob} alt="Mobile" />
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSearch}>
                     <input
                         type='text'
                         className='inputNot'
@@ -114,7 +118,7 @@ function PayWith() {
                         <p>Save your card information, it's safe</p>
                     </div>
 
-                <button type='submit'>Book</button>
+                    <Link to='/payment/search'><button onClick={handleCheckboxChange} type='submit'>Book </button> </Link> 
                 </form>
             </div>
         </div>
