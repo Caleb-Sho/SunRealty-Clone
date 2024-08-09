@@ -76,6 +76,7 @@ function PayWith() {
     };
 
     return (
+        <div style={{width: '100%', backgroundColor: 'rgb(233, 221, 154)' }}>
         <div className='wholeCntDivs'>
             <div className='tflexflex'>
                 <IoIosArrowBack />
@@ -116,6 +117,7 @@ function PayWith() {
                     <button type='submit'>Book</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 }
