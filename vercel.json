@@ -1,0 +1,34 @@
+
+
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "src/**/*",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "rewrites": [
+      { "source": "/api/(.*)", "destination": "/api/server.js" }
+    ],
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "s-maxage=86400"
+          }
+        ]
+      }
+    ],
+    "env": {
+      "NODE_ENV": "production",
+      "API_BASE_URL": "https://sun-realty-homes-ol9tig4bd-caleb-shokes-projects.vercel.app"
+    }
+  }
+  
