@@ -29,6 +29,10 @@
     "env": {
       "NODE_ENV": "production",
       "API_BASE_URL": "https://sun-realty-homes-ol9tig4bd-caleb-shokes-projects.vercel.app"
-    }
+    },
+    "static": {
+    "src": "build"
+  }
+  
   }
   
