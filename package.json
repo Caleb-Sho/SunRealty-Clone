@@ -46,18 +46,6 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
-  },
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/server.js" }
-  ]
+    "concurrently": "^8.2.2"
+  }
 }
