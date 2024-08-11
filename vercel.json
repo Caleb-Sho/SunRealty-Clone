@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+      "use": "@vercel/static-build"
     },
     {
       "src": "api/server.js",
@@ -15,17 +12,6 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/server.js" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "s-maxage=86400"
-        }
-      ]
-    }
   ],
   "env": {
     "NODE_ENV": "production",
