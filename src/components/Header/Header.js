@@ -93,7 +93,7 @@ const Header = () => {
             <div className='bodytextdecor'>
                 <div className='thetopflex'>
 
-                    <img src='https://www.sunrealtync.com/sites/all/themes/custom/vrweb_foundation/logo.png' />
+                    <img src='https://www.sunrealtync.com/sites/all/themes/custom/vrweb_foundation/logo.png'  alt="" />
                     <div className='columnflexProp'>
                         <div className='theflexflex'>
                             <div className='disappearTxt'><p>Login</p></div>

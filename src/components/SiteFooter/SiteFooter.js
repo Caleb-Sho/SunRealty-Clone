@@ -8,7 +8,7 @@ const SiteFooter = () => {
       <div className="container">
         <p>© 2024 Sun Realty</p>
         <ul>
-          <p>Powered By <a href="#">Track Hospitality Software</a> </p>
+          <p>Powered By <a href="https://google.com">Track Hospitality Software</a> </p>
         </ul>
       </div>
     </footer>
