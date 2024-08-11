@@ -46,7 +46,7 @@ app.post('/api/save-data', (req, res) => {
 // Export the app
 module.exports = app;
 
-// Start the server (add this only for local testing)
+// Start the server (for local testing only)
 if (process.env.NODE_ENV !== 'production') {
   app.listen(5000, () => {
     console.log('Server running on http://localhost:5000');
