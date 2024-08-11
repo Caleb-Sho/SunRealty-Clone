@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import './Header.css';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+// import ReactDOM from 'react-dom';
+// import { BrowserRouter } from 'react-router-dom';
 // import classes from './Header.css'
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
