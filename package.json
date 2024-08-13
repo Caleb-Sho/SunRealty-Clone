@@ -5,6 +5,7 @@
     "start": "concurrently \"react-scripts start\" \"node api/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "clean": "rm -rf build",
     "eject": "react-scripts eject"
   },
   "homepage": ".",

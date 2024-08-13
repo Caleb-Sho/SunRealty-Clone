@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
     },
     {
       "src": "api/server.js",
@@ -16,12 +19,15 @@
       "dest": "/api/server.js"
     },
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
   "env": {
     "NODE_ENV": "production",
-    "API_BASE_URL": "https://sun-realty-homes-ol9tig4bd-caleb-shokes-projects.vercel.app"
+    "API_BASE_URL": "https://sun-realty-homes-cl.vercel.app/api"
   }
 }
