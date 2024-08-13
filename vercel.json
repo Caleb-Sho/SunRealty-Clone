@@ -28,6 +28,6 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "API_BASE_URL": "https://present-bengal-48232.upstash.io"
+    "API_BASE_URL": "https://sun-realty-homes-spwfma9xn-caleb-shokes-projects.vercel.app/" 
   }
 }
