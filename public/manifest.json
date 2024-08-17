@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Sun Realty",
+  "name": "Welcome ",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://media.istockphoto.com/id/1031803100/photo/soft-blue-abstract-business-graphic-wave-background.webp?b=1&s=170667a&w=0&k=20&c=lbPikpJfAaAYtqSp2ZO8jA6Wf5NmDORdNd53Lfi_reE=",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "https://media.istockphoto.com/id/1031803100/photo/soft-blue-abstract-business-graphic-wave-background.webp?b=1&s=170667a&w=0&k=20&c=lbPikpJfAaAYtqSp2ZO8jA6Wf5NmDORdNd53Lfi_reE=",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://media.istockphoto.com/id/1031803100/photo/soft-blue-abstract-business-graphic-wave-background.webp?b=1&s=170667a&w=0&k=20&c=lbPikpJfAaAYtqSp2ZO8jA6Wf5NmDORdNd53Lfi_reE=",
       "type": "image/png",
       "sizes": "512x512"
     }
