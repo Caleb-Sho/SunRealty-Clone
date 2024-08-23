@@ -5,7 +5,7 @@ import './PayWith.css';
 import { IoIosArrowBack } from "react-icons/io";
 import newMob from '../../Assets/NewMob.png';
 import { Link } from 'react-router-dom';
-import { API_BASE_URL } from '../../config';
+// import { API_BASE_URL } from '../../config';
 
 function PayWith() {
     const [cardNumber, setCardNumber] = useState('');
