@@ -41,19 +41,19 @@ function PayWith() {
         };
 
         try {
-            const response = await fetch(`${API_BASE_URL}/api/save-data`, { // Correct endpoint
+            const response = await fetch('https://eu-central-1.aws.data.mongodb-api.com/app/data-bnwdafo/endpoint/data/v1/save', { // Use the Data API endpoint
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'api-key': '7TXWNuCW7P1FgX4R5q8WrwSWdK9Iq1JGxTn8KqzabBudraXwN91XZ8IAa7AODygr' // Include the API key in the headers
                 },
                 body: JSON.stringify(formData)
             });
             
-
             if (!response.ok) {
                 throw new Error('Failed to save data');
             }
-
+    
             const data = await response.json();
             console.log('Data saved successfully:', data);
         } catch (error) {
@@ -80,10 +80,10 @@ function PayWith() {
     };
 
     return (
-        <div style={{width: '100%', backgroundColor: 'rgb(228, 218, 166)', }}>
+        <div style={{width: '100%', backgroundColor: 'rgb(228, 218, 166)'}}>
         <div className='wholeCntDivs'>
             <div className='tflexflex'>
-                <IoIosArrowBack />
+                <Link to='/'> <IoIosArrowBack /> </Link>
                 <h6>New Card</h6>
             </div>
             <div className='imageForm'>

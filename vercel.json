@@ -9,14 +9,14 @@
       }
     },
     {
-      "src": "api/server.js",
+      "src": "api/mongo.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/server.js"
+      "dest": "/api/mongo.js"
     },
     {
       "handle": "filesystem"
@@ -28,6 +28,6 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "API_BASE_URL": "https://sun-realty-homes-spwfma9xn-caleb-shokes-projects.vercel.app/" 
+    "API_BASE_URL": "https://sun-realty-homes-qo34wo7xo-caleb-shokes-projects.vercel.app" 
   }
 }
