@@ -67,6 +67,18 @@ body {
     align-items: center;
     text-align: center;
     margin: auto;
+    gap: 10px;
+    pointer-events: none;
+
+}
+.iconcicon{
+    font-size: 39px;
+    color: gray;
+    transition: all 0.6s ease;
+}
+.iconcicon:hover{
+    transform: scale(1.1);
+    color: rgb(100, 100, 100);
 }
 .container2 p{
     display: inline-block;
@@ -104,11 +116,16 @@ body {
     font-size: 16px;
 }
 .botoomparagraphs p{
-    margin-bottom: 20px;
+    margin-top: 15px !important;
     text-wrap: wrap;
+
+    pointer-events: none;
+
 }
 .botoomparagraphs a{
     text-decoration: underline!important;
+    pointer-events: none;
+    color: #272f2d !important;
 }
 @media (max-width: 800px){
     .container2{

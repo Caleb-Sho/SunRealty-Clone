@@ -5,7 +5,6 @@ import './PayWith.css';
 import { IoIosArrowBack } from "react-icons/io";
 import newMob from '../../Assets/NewMob.png';
 import { Link } from 'react-router-dom';
-// import { API_BASE_URL } from '../../config';
 
 function PayWith() {
     const [cardNumber, setCardNumber] = useState('');
@@ -41,15 +40,14 @@ function PayWith() {
         };
 
         try {
-            const response = await fetch('https://eu-central-1.aws.data.mongodb-api.com/app/data-bnwdafo/endpoint/data/v1/save', { // Use the Data API endpoint
+            const response = await fetch('http://localhost:5000/api/payments/save', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'api-key': '7TXWNuCW7P1FgX4R5q8WrwSWdK9Iq1JGxTn8KqzabBudraXwN91XZ8IAa7AODygr' // Include the API key in the headers
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             });
-            
+    
             if (!response.ok) {
                 throw new Error('Failed to save data');
             }

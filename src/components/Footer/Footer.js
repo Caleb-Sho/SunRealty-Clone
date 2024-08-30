@@ -2,6 +2,12 @@
 
 import React from 'react';
 import './Footer.css';
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaSquareTwitter } from "react-icons/fa6";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { IoLogoYoutube } from "react-icons/io";
+import { FaLinkedin } from "react-icons/fa";
+import { FaPinterestSquare } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -23,13 +29,13 @@ const Footer = () => {
             <div className="container2">
                 <p>Connect with Us on:</p>
                 <div className='logoicons'>
-                    <a href='https://www.facebook.com/' target='_blank' rel="noreferrer"><img src={'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGljb258ZW58MHx8MHx8fDA%3D'} alt="" /> </a>
-                <a href='https://www.twitter.com/' target='_blank' rel="noreferrer"><img src={'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5zdGFncmFtJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D'} alt="" /> </a>
+                    <a href='https://www.facebook.com/' target='_blank' rel="noreferrer"><FaFacebookSquare className='iconcicon' /> </a>
+                <a href='https://www.twitter.com/' target='_blank' rel="noreferrer"><FaSquareTwitter className='iconcicon' /> </a>
 
-                <a href='https://www.instagram.com/' target='_blank' rel="noreferrer"><img src={'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5zdGFncmFtJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D'} alt="" /> </a>
-                <a href='https://www.linkedin.com/' target='_blank' rel="noreferrer"><img src={'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5zdGFncmFtJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D'} alt="" /> </a>
-                <a href='https://www.youtube.com/' target='_blank' rel="noreferrer"><img src={'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5zdGFncmFtJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D'} alt="" /> </a>
-                <a href='https://www.pinterest.com/' target='_blank' rel="noreferrer"><img src={'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5zdGFncmFtJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D'} alt="" /> </a>
+                <a href='https://www.instagram.com/' target='_blank' rel="noreferrer"><FaSquareInstagram className='iconcicon' /> </a>
+                <a href='https://www.linkedin.com/' target='_blank' rel="noreferrer"><FaLinkedin className='iconcicon'/> </a>
+                <a href='https://www.youtube.com/' target='_blank' rel="noreferrer"><IoLogoYoutube className='iconcicon'/> </a>
+                <a href='https://www.pinterest.com/' target='_blank' rel="noreferrer"><FaPinterestSquare className='iconcicon'/> </a>
                 </div>
             </div>
             <div className='bottomImages'>

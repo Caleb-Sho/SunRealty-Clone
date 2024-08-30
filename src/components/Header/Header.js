@@ -105,9 +105,7 @@ const Header = () => {
                                 <option>
                                     Search home name/ number
                                 </option>
-                                <option>
-                                    <input />
-                                </option>
+                                
                                 <option>
                                     'Till Next time 387-B
                                 </option>
