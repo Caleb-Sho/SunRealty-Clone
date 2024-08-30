@@ -58,14 +58,14 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
     align-items: center;
     text-align: center;
     padding-bottom: 0;
   }
   
   .listing-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
   
   .listing-card img {
@@ -111,6 +111,9 @@ body {
     text-decoration: none;
     text-align: top;
     line-height: 1;
+  }
+  .listing-card button:hover{
+   background-color: rgba(218, 241, 245, 0.5) ;
   }
   .saltpalaca{
     margin: 0 20px;

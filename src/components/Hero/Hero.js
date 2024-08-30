@@ -3,11 +3,12 @@
 import React from 'react';
 import './Hero.css';
 import { IoMdShare } from "react-icons/io";
+import homeImg from '../../Assets/sunHome.jpg'
 
 const Hero = () => {
   return (
     <section className="hero">
-      <img src={'https://www.sunrealtync.com/sites/default/files/styles/og_image/public/page-banners/untitled_2_of_26.jpg'}  alt="" />
+      <img src={homeImg}  alt="" />
       <div className='Headersbtns'>
         <h4>
           Nag Head Rentals
