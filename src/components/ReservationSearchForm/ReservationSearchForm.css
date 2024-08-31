@@ -80,8 +80,8 @@
 .thetopDIvf h5{
   text-align: right;
   color: rgb(50, 146, 201);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 580;
 }
 .thetopDIvf{
   display: flex;
@@ -89,6 +89,7 @@
   align-items: center;
   border-bottom: 1px solid rgb(192, 192, 192);
   margin-bottom: 10px !important;
+  margin-top: 30px !important;
   padding-bottom: 10px;
   width: 80%;
   margin: auto;

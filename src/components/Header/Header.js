@@ -2,18 +2,15 @@
 
 import React, { useState } from 'react';
 import './Header.css';
-// import ReactDOM from 'react-dom';
-// import { BrowserRouter } from 'react-router-dom';
-// import classes from './Header.css'
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-// import { IoMdArrowDropdown } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 import { FaHeadset } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { IoMdArrowDropright } from "react-icons/io";
+import Notification from '../Notification/NotificationShow';
 
 const CustomNavDropdown = styled(NavDropdown)`
   .dropdown-toggle::after {
@@ -24,8 +21,17 @@ const CustomNavDropdown = styled(NavDropdown)`
   }
 `;
 
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [notificationVisible, setNotificationVisible] = useState(false);
+
+    const handleShareClick = () => {
+        setNotificationVisible(true);
+        setTimeout(() => {
+            setNotificationVisible(false);
+        }, 6000); // Hide the notification after 7 seconds
+    };
 
     const handleToggle = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -89,23 +95,30 @@ const Header = () => {
     };
 
     return (
+        <>
+      {notificationVisible && (
+        <Notification
+          message="Attention planners: our website is currently under maintenance, Contact: (206) 414-8973, to book and monitor your reservations!"
+          onClose={() => setNotificationVisible(false)}
+        />
+      )}
         <header className="header">
             <div className='bodytextdecor'>
                 <div className='thetopflex'>
 
-                    <img src='https://www.sunrealtync.com/sites/all/themes/custom/vrweb_foundation/logo.png'  alt="" />
+                    <img src='https://www.sunrealtync.com/sites/all/themes/custom/vrweb_foundation/logo.png' alt="" />
                     <div className='columnflexProp'>
                         <div className='theflexflex'>
-                            <div className='disappearTxt'><p>Login</p></div>
-                            <Link to='/payment'> <div className='disappearTxt'><p>Payments</p></div> </Link>
-                            <div className='disappearTxt'><p>My Trips</p></div>
-                            <div className='disappearTxt'><p>(0) My Favorites</p></div>
-                            <div className='disappearTxt'><p><a href="tel:(206) 414-8973">(206) 414-8973 </a> </p></div>
+                            <div className='disappearTxt' style={{cursor: 'pointer'}}><p>Login</p></div>
+                            <Link to='/payment'> <div className='disappearTxt' style={{cursor: 'pointer'}}><p>Payments</p></div> </Link>
+                            <div className='disappearTxt' style={{cursor: 'pointer'}}><p>My Trips</p></div>
+                            <div className='disappearTxt' style={{cursor: 'pointer'}}><p>(0) My Favorites</p></div>
+                            <div className='disappearTxt' style={{cursor: 'pointer'}}><p><a href="tel:(206) 414-8973">(206) 414-8973 </a> </p></div>
                             <select>
                                 <option>
                                     Search home name/ number
                                 </option>
-                                
+
                                 <option>
                                     'Till Next time 387-B
                                 </option>
@@ -126,7 +139,7 @@ const Header = () => {
                         </div>
                         <div className='controlledNav'>
                             <Nav variant="pills" activeKey="1" justify >
-                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle}>
+                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle} onClick={handleShareClick}>
 
                                     <p style={{
                                         fontWeight: 550,
@@ -161,7 +174,7 @@ const Header = () => {
                                     <NavDropdown.Item eventKey="4.1" style={{ fontSize: 15, textAlign: 'left', margin: 4, padding: 0, paddingLeft: 5, color: '#008998', borderRadius: 0, }} >SUn Realty Offers Waterparks Perks for all Guests</NavDropdown.Item>
 
                                 </CustomNavDropdown>
-                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle}>
+                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle} onClick={handleShareClick}>
 
                                     <p style={{
                                         fontWeight: 550,
@@ -190,7 +203,7 @@ const Header = () => {
                                     <NavDropdown.Item eventKey="4.1" style={{ fontSize: 15, textAlign: 'left', margin: 4, padding: 0, paddingLeft: 5, color: '#008998', borderRadius: 0, }} >OBX Vacay Channels</NavDropdown.Item>
 
                                 </CustomNavDropdown>
-                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle}>
+                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle} onClick={handleShareClick}>
 
                                     <p style={{
                                         fontWeight: 550,
@@ -221,7 +234,7 @@ const Header = () => {
                                     <NavDropdown.Item eventKey="4.1" style={{ fontSize: 15, textAlign: 'left', margin: 4, padding: 0, paddingLeft: 5, color: '#008998', borderRadius: 0, }} >Join our Email List</NavDropdown.Item>
 
                                 </CustomNavDropdown>
-                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle}>
+                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle} onClick={handleShareClick}>
 
                                     <p style={{
                                         fontWeight: 550,
@@ -251,7 +264,7 @@ const Header = () => {
                                     <NavDropdown.Item eventKey="4.1" style={{ fontSize: 15, textAlign: 'left', margin: 4, padding: 0, paddingLeft: 5, color: '#008998', borderRadius: 0, }} >Owner Resources</NavDropdown.Item>
 
                                 </CustomNavDropdown>
-                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle}>
+                                <CustomNavDropdown title={<div style={tabStyles.navDropdownTitleStyle} onClick={handleShareClick}>
 
                                     <p style={{
                                         fontWeight: 550,
@@ -275,36 +288,37 @@ const Header = () => {
                                     <NavDropdown.Item eventKey="4.1" style={{ fontSize: 15, textAlign: 'left', margin: 4, padding: 0, paddingLeft: 5, color: '#008998', borderRadius: 0, }} >Long Term Rentals</NavDropdown.Item>
                                 </CustomNavDropdown>
                             </Nav>
-                            
+
                         </div>
-                        
+
 
 
                     </div>
-                    
+
 
                 </div>
                 <div className='mobileHeader'>
-                                <div><p>Login</p></div>
-                                <Link to='/payment'> <div><p>Pay</p></div> </Link>
-                                <div><p>Trips</p></div>
-                                <div><p> <FaHeart />(0)</p></div>
-                                <div className='mobile_a'><a href="tel:(206) 414-8973"><FaHeadset /></a></div>
-                                <div onClick={handleToggle}><p >{ isMenuOpen ? 'Close' : 'Menu' }</p></div>
-                            </div>
+                    <div style={{cursor: 'pointer'}} onClick={handleShareClick}><p>Login</p></div>
+                    <Link to='/payment'> <div><p>Pay</p></div> </Link>
+                    <div style={{cursor: 'pointer'}}><p>Trips</p></div>
+                    <div style={{cursor: 'pointer'}}><p> <FaHeart />(0)</p></div>
+                    <div className='mobile_a'><a href="tel:(206) 414-8973"><FaHeadset /></a></div>
+                    <div onClick={handleToggle}><p >{isMenuOpen ? 'Close' : 'Menu'}</p></div>
+                </div>
                 <div className='linedecoration' />
                 <div className={` ${'links'} ${isMenuOpen ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv'> <p>Vacation Rentals </p><IoMdArrowDropright /></div></Link> 
+                    <Link to='/'> <div className='linkDiv'> <p>Vacation Rentals </p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv'> <p> Outer Banks Info </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv'> <p>Vacationer's Guide</p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv'> <p>List With Sun</p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv'> <p> Real Estate Sales</p><IoMdArrowDropright /></div></Link>
-                    
+
                 </div>
             </div>
 
 
         </header>
+        </>
     );
 };
 

@@ -1,0 +1,32 @@
+/* src/components/Notification/Notification.css */
+
+.notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #008998; /* Red color for alert */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  
+  .notification p {
+    margin: 0;
+    flex: 1;
+  }
+  
+  .notification button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+  

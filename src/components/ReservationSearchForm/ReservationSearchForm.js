@@ -2,10 +2,20 @@
 import React, { useState } from 'react';
 import './ReservationSearchForm.css';
 import Site from '../../../src/components/SiteFooter/SiteFooter'
+import Notification from '../Notification/NotificationShow';
 
 function ReservationSearchForm () {
     const [confirmationNumber, setConfirmationNumber] = useState('');
     const [checkInDate, setCheckInDate] = useState('');
+
+    const [notificationVisible, setNotificationVisible] = useState(false);
+
+    const handleShareClick = () => {
+        setNotificationVisible(true);
+        setTimeout(() => {
+            setNotificationVisible(false);
+        }, 6000); // Hide the notification after 7 seconds
+    };
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -14,11 +24,17 @@ function ReservationSearchForm () {
     };
 
     return (
-
+        <>
+        {notificationVisible && (
+          <Notification
+            message="Attention planners: our website is currently under maintenance, Contact: (206) 414-8973, to book and monitor your reservations!"
+            onClose={() => setNotificationVisible(false)}
+          />
+        )}
         <div>
             <div className='thetopDIvf'>
                 <img src='https://d2epyxaxvaz7xr.cloudfront.net/x80/https://track-files.s3.amazonaws.com/sun/image/911c3fb5-5fd5-458d-8769-62fe68873feb'  alt=""/>
-                <h5>Reservations: (206) 414-8973</h5>
+                <h5><a href='tel:(206) 414-8973'>Reservations: (206) 414-8973 </a></h5>
             </div>
             <div className="reservation-search-form">
                 <h2>Search Reservation</h2>
@@ -57,7 +73,7 @@ function ReservationSearchForm () {
                     </div>
                     <div className='buttonbutton'>
                         <button type="submit" className="reset-button">Reset</button>
-                        <button type="submit" className="search-button">Search</button>
+                        <button onClick={handleShareClick} type="submit" className="search-button">Search</button>
                     </div>
 
                 </form>
@@ -65,6 +81,7 @@ function ReservationSearchForm () {
 
             <Site />
         </div>
+        </>
     );
 };
 

@@ -4,7 +4,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import './FeaturedListings.css';
 import { CiFilter } from "react-icons/ci";
 import { MdDateRange } from "react-icons/md";
-
+import Notification from '../Notification/NotificationShow';
 
 
 
@@ -657,8 +657,24 @@ import { MdDateRange } from "react-icons/md";
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }, [filterRef]);
+
+    const [notificationVisible, setNotificationVisible] = useState(false);
+
+    const handleShareClick = () => {
+        setNotificationVisible(true);
+        setTimeout(() => {
+            setNotificationVisible(false);
+        }, 6000); // Hide the notification after 7 seconds
+    };
   
     return (
+      <>
+      {notificationVisible && (
+        <Notification
+          message="Attention planners: our website is currently under maintenance, Contact: (206) 414-8973, to book and monitor your reservations!"
+          onClose={() => setNotificationVisible(false)}
+        />
+      )}
       <section className="featured-listings">
         <div className='rowFunctions'>
           <button onClick={handleFilterToggle} className='filterBtn'>
@@ -733,13 +749,14 @@ import { MdDateRange } from "react-icons/md";
                   </div>
                   <p>{listing.description}</p>
                   <p>{listing.conditions}</p>
-                  <button>View Details</button>
+                  <button onClick={handleShareClick}>View Details</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+      </>
     );
   };
   
