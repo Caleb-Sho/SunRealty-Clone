@@ -27,7 +27,9 @@ function PayWith() {
 
     const handleCvcCodeChange = (e) => {
         const input = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
-        setCvcCode(input);
+        if (input.length <= 4) {
+            setCvcCode(input);
+        }
     };
 
     
@@ -95,7 +97,7 @@ function PayWith() {
                         onChange={handleCardNumberChange}
                     />
                     <input
-                        type='text'
+                        type='date'
                         className='inputNot'
                         placeholder='Expiration Date (MM/YY)'
                         value={expirationDate}
