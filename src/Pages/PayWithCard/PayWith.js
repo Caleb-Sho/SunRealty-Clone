@@ -40,7 +40,7 @@ function PayWith() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/api/payments/save', {
+            const response = await fetch('https://sunrealty-homes-cl.onrender.com/api/payments/save', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
