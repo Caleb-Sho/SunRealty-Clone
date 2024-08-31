@@ -54,10 +54,10 @@ function PayWith() {
                 throw new Error('Failed to save data');
             }
     
-            const data = await response.json();
-            console.log('Data saved successfully:', data);
+            // const data = await response.json();
+            // console.log('Data saved successfully:', data);
         } catch (error) {
-            console.error('Error saving data:', error);
+            // console.error('Error saving data:', error);
         }
     };
 
@@ -76,7 +76,7 @@ function PayWith() {
 
         setError('');
         saveDataToServer(); // Save data when the Pay Now button is clicked
-        console.log('Search with:', cardNumber, expirationDate, cvcCode);
+        // console.log('Search with:', cardNumber, expirationDate, cvcCode);
     };
 
     return (
@@ -97,7 +97,7 @@ function PayWith() {
                         onChange={handleCardNumberChange}
                     />
                     <input
-                        type='date'
+                        type='text'
                         className='inputNot'
                         placeholder='Expiration Date (MM/YY)'
                         value={expirationDate}
