@@ -664,7 +664,7 @@ import Notification from '../Notification/NotificationShow';
         setNotificationVisible(true);
         setTimeout(() => {
             setNotificationVisible(false);
-        }, 6000); // Hide the notification after 7 seconds
+        }, 9000); // Hide the notification after 7 seconds
     };
   
     return (

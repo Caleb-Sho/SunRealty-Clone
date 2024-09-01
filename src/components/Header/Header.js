@@ -24,13 +24,24 @@ const CustomNavDropdown = styled(NavDropdown)`
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // const [isSubMenuOpen1, setIsSubMenuOpen1] = useState(false);
     const [notificationVisible, setNotificationVisible] = useState(false);
+    // const [animate, setAnimate] = useState(false);
+
+    // useEffect(() => {
+        // Delay to give a smooth entrance when the page is loaded
+        // const timer = setTimeout(() => {
+        //     setAnimate(true);
+        // }, 500); // Adjust delay as needed
+
+        // return () => clearTimeout(timer);
+    // }, []);
 
     const handleShareClick = () => {
         setNotificationVisible(true);
         setTimeout(() => {
             setNotificationVisible(false);
-        }, 6000); // Hide the notification after 7 seconds
+        }, 9000); // Hide the notification after 7 seconds
     };
 
     const handleToggle = () => {
@@ -307,12 +318,11 @@ const Header = () => {
                 </div>
                 <div className='linedecoration' />
                 <div className={` ${'links'} ${isMenuOpen ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv'> <p>Vacation Rentals </p><IoMdArrowDropright /></div></Link>
-                    <Link to='/'> <div className='linkDiv'> <p> Outer Banks Info </p> <IoMdArrowDropright /></div></Link>
-                    <Link to='/'> <div className='linkDiv'> <p>Vacationer's Guide</p><IoMdArrowDropright /></div></Link>
-                    <Link to='/'> <div className='linkDiv'> <p>List With Sun</p><IoMdArrowDropright /></div></Link>
-                    <Link to='/'> <div className='linkDiv'> <p> Real Estate Sales</p><IoMdArrowDropright /></div></Link>
-
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p>Vacation Rentals </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Outer Banks Info </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p>Vacationer's Guide</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p>List With Sun</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Real Estate Sales</p><IoMdArrowDropright /></div></Link>
                 </div>
             </div>
 

@@ -13,7 +13,7 @@ const Hero = () => {
     setNotificationVisible(true);
     const timer = setTimeout(() => {
       setNotificationVisible(false);
-    }, 3500); // Hide the notification after 6 seconds
+    }, 8000); // Hide the notification after 6 seconds
 
     return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
   }, []);
@@ -23,14 +23,14 @@ const Hero = () => {
     setNotificationVisible(true);
     setTimeout(() => {
       setNotificationVisible(false);
-    }, 7000); // Hide the notification after 7 seconds
+    }, 9000); // Hide the notification after 7 seconds
   };
 
   return (
     <>
       {notificationVisible && (
         <Notification
-          message="Attention planners: our website is currently under maintenance, Contact: (206) 414-8973, to book and monitor your reservations!"
+          message="Attention planners: Our website is currently under maintenance, contact: (206) 414-8973, to book and monitor your reservations!"
           onClose={() => setNotificationVisible(false)}
         />
       )}
