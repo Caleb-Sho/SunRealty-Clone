@@ -1,5 +1,6 @@
 a{
     text-decoration: none !important;
+    cursor: pointer !important;
 }
 link{
     text-decoration: none !important;
