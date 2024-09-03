@@ -1,0 +1,235 @@
+
+.topFlexWith {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px !important;
+}
+
+.topFlexWith img {
+    width: 60%;
+    border-radius: 10px;
+}
+
+.topFlexWith h2 {
+    font-family: "Lato", sans-serif;
+    color: #008998;
+    font-weight: bold;
+    font-size: 1.55em;
+    font-style: normal;
+    line-height: 1.4;
+    margin-top: 0.2em;
+    margin-bottom: 10px;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    text-wrap: nowrap;
+    text-align: center;
+}
+.topFlexWith p {
+    font-family: "Lato", sans-serif;
+    color: #008998;
+    font-weight: normal;
+    font-size: 1.15em;
+    font-style: normal;
+    line-height: 1.4;
+    margin-top: 0.2em;
+    margin-bottom: 6px;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    text-wrap: nowrap;
+    text-align: center;
+}
+
+.fixedDateInput {
+    /* position: fixed; */
+    margin-top: 40px;
+    bottom: 0;
+    width: 109%;
+    background: #ddfff4;
+    padding: 20px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    text-align: left;
+}
+.rowlabel{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: flex-start;
+    text-align: left;
+    width: 90%;
+    margin: auto;
+}
+
+.fixedDateInput button{
+    width: 90%;
+    margin: auto;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #8B7627;
+    color: white;
+    font-weight: bold;
+}
+.rowlabel label{
+    font-weight: bold;
+}
+.rowlabel input{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+}
+.FlexItemsThings{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+    margin: auto;
+    margin-top: 0;
+}
+.ngoloDodo{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+.ngoloDodo p{
+    font-size: 23px;
+    color: #008998;
+    text-align: center;
+}
+.ngoloDodo .biggerTxt{
+    
+    font-family: "Lato", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #008998;
+    text-rendering: optimizeLegibility;
+    margin-top: 0.2em;
+    margin-bottom: 1em !important;
+    line-height: 1.2125em;
+    border-top: 5px solid #ECECEC;
+    font-size: 1.7em;
+    padding-top: 40px;
+    text-align: center;
+}
+.theDivDivs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+}
+.theDivDivs .pTagBorder p{
+    border-bottom: 5px solid #ECECEC;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 30px 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.pTagBorder{
+    width: 45%;
+}
+.besideBackground{
+    width: 48%;
+}
+.pTopp{
+    padding: 16px;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    text-align: center;
+    background-color: #008998;
+    color: white;
+    font-weight: bold;
+}
+.tinthingFlex{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 30px;
+    background-color: #ddfff4;
+}
+.tinthingFlex p{
+    
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.45;
+    margin-bottom: 1.25em;
+    text-rendering: optimizeLegibility;
+}
+.tinthingFlex img{
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+@media (max-width: 900px) {
+    .topFlexWith {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        width: 98%;
+        margin: auto;
+    }    
+    .topFlexWith img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .FlexItemsThings{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        margin: auto;
+        margin-top: 0;
+    }
+    .fixedDateInput {
+        /* position: fixed; */
+        margin-top: 40px;
+        bottom: 0;
+        width: 100%;
+        background: #ddfff4;
+        padding: 20px;
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .ngoloDodo{
+        width: 98%;
+        margin: auto;
+        margin-top: 50px;
+    }
+    .theDivDivs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .pTagBorder{
+        width: 95%;
+    }
+    .besideBackground{
+        width: 96%;
+        margin-top: 40px;
+    }
+}
