@@ -11,9 +11,25 @@ const ListingDetails = () => {
     const { id } = useParams();
     const { listings } = useContext(ListingsContext);
     const listing = listings.find(listing => listing.id === parseInt(id));
+
     const [arrivalDate, setArrivalDate] = useState('');
     const [departureDate, setDepartureDate] = useState('');
     const [totalPrice, setTotalPrice] = useState();
+    const [pricePerNight, setPricePerNight] = useState(0);
+
+    // Extract number of bedrooms from the conditions string
+    useEffect(() => {
+        const bedroomsString = listing.conditions.split(' ')[0];
+        const bedrooms = parseInt(bedroomsString, 10);
+
+        if (!isNaN(bedrooms)) {
+            const calculatedPricePerNight = 114 * bedrooms; // Calculate price per night
+            setPricePerNight(calculatedPricePerNight);
+        } else {
+            console.warn('Invalid number of bedrooms');
+            setPricePerNight(0);
+        }
+    }, [listing.conditions]);
 
     const calculateTotalPrice = useCallback((arrivalDate, departureDate) => {
         const arrival = new Date(arrivalDate);
@@ -28,18 +44,14 @@ const ListingDetails = () => {
         const diffTime = Math.abs(departure - arrival);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
-        const bedroomsString = listing.conditions.split(' ')[0];
-        const bedrooms = parseInt(bedroomsString, 10);
-    
-        if (!isNaN(bedrooms) && !isNaN(diffDays)) {
-            const pricePerNight = 35 * bedrooms;
-            const calculatedTotalPrice = diffDays * pricePerNight;
+        if (!isNaN(pricePerNight) && !isNaN(diffDays)) {
+            const calculatedTotalPrice = diffDays * (pricePerNight +127 );
             setTotalPrice(calculatedTotalPrice);
         } else {
             console.warn('Calculation error: Invalid number of bedrooms or days');
             setTotalPrice(0);
         }
-    }, [listing]);
+    }, [pricePerNight]);
     
     useEffect(() => {
         if (arrivalDate && departureDate) {
@@ -79,6 +91,7 @@ const ListingDetails = () => {
                     <h2>{listing.title}</h2>
                     <p>{listing.description}</p>
                     <p>{listing.conditions}</p>
+                    <p>Price per night: ${pricePerNight}</p> {/* Display price per night */}
                     <div className='fixedDateInput'>
                         <div className='rowlabel'>
                             <label>
@@ -104,10 +117,10 @@ const ListingDetails = () => {
                         </div>
                         {totalPrice && (
                             <>
-                        <p style={{ textWrap: 'nowrap' }}>Total Price: ${totalPrice} <span style={{ fontSize: 13, color: 'black' }}>+taxes/fees</span></p>
-                        <button type='submit' onClick={openModal}>Book Now</button>
-                        </>
-                    )}
+                                <p style={{ textWrap: 'nowrap' }}>Total Price: ${totalPrice} <span style={{ fontSize: 13, color: 'black' }}>+taxes/fees</span></p>
+                                <button type='submit' onClick={openModal}>Book Now</button>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
