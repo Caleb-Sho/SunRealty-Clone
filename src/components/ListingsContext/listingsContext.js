@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 export const ListingsContext = createContext();
 
 export const ListingsProvider = ({ children }) => {
-    const [listings, setListings] = useState([
+    const [listings] = useState([
             {
               id: 1,
               title: 'OBX-ta-Sea 433-A5',
