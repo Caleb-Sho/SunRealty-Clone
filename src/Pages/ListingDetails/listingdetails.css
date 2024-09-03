@@ -48,7 +48,7 @@
     margin-top: 40px;
     bottom: 0;
     width: 109%;
-    background: #ddfff4;
+    background-color: #E7F4F5;
     padding: 20px;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -159,7 +159,7 @@
     justify-content: flex-start;
     gap: 20px;
     padding: 30px;
-    background-color: #ddfff4;
+    background-color: #E7F4F5;
 }
 .tinthingFlex p{
     

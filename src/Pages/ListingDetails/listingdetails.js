@@ -13,7 +13,7 @@ const ListingDetails = () => {
     const listing = listings.find(listing => listing.id === parseInt(id));
     const [arrivalDate, setArrivalDate] = useState('');
     const [departureDate, setDepartureDate] = useState('');
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalPrice, setTotalPrice] = useState();
 
     const calculateTotalPrice = useCallback((arrivalDate, departureDate) => {
         const arrival = new Date(arrivalDate);
@@ -102,8 +102,12 @@ const ListingDetails = () => {
                                 required
                             />
                         </div>
+                        {totalPrice && (
+                            <>
                         <p style={{ textWrap: 'nowrap' }}>Total Price: ${totalPrice} <span style={{ fontSize: 13, color: 'black' }}>+taxes/fees</span></p>
-                        <button onClick={openModal}>Book Now</button>
+                        <button type='submit' onClick={openModal}>Book Now</button>
+                        </>
+                    )}
                     </div>
                 </div>
             </div>

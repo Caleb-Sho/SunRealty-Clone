@@ -39,6 +39,8 @@
     color: white;
     text-align: center;
     z-index: 9999;
+    margin-top: 20px;
+    position: relative;
     /* position: relative; */
     /* font-size: 20px; */
     /* top: 0; */
