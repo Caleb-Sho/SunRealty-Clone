@@ -17,6 +17,11 @@ const ListingDetails = () => {
     const [totalPrice, setTotalPrice] = useState();
     const [pricePerNight, setPricePerNight] = useState(0);
 
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+    }, []); 
+
     // Extract number of bedrooms from the conditions string
     useEffect(() => {
         const bedroomsString = listing.conditions.split(' ')[0];
