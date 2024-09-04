@@ -1,7 +1,7 @@
 .modalOverlay {
     position: fixed;
-    top: 40%;
-    left: 35%;
+    top: 30%;
+    left: 32.5%;
     /* right: 0;
     bottom: 0; */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
@@ -41,9 +41,14 @@
     z-index: 9999;
     margin-top: 20px;
     position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /* position: relative; */
     /* font-size: 20px; */
     /* top: 0; */
+}
+.modalContent h2{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .modalContent img{
     width: 80px;

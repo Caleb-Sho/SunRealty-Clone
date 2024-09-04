@@ -11,8 +11,9 @@ const Modal = ({ isOpen, onClose }) => {
                     &times;
                 </button>
                 <div className={classes.modalContent}>
-                    <h2>Booking currently unavailable</h2>
+                    <h2>BOOKING CURRENTLY UNAVAILABLE</h2>
                     <p>Call / message <a href='tel:(206) 414-8973'>(206) 414-8973</a> to book your Reservation</p>
+                    <p>We apologize for any inconveniences</p>
                 </div>
             </div>
         </div>

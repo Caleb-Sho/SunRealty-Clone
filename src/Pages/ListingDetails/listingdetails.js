@@ -4,8 +4,9 @@ import { ListingsContext } from '../../components/ListingsContext/listingsContex
 import './listingdetails.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Modal from '../../components/Unavailable/modal';
+
 import Notification from '../../components/Notification/NotificationShow';
+import { useNavigate } from 'react-router-dom';
 
 const ListingDetails = () => {
     const { id } = useParams();
@@ -15,7 +16,10 @@ const ListingDetails = () => {
     const [arrivalDate, setArrivalDate] = useState('');
     const [departureDate, setDepartureDate] = useState('');
     const [totalPrice, setTotalPrice] = useState();
-    const [pricePerNight, setPricePerNight] = useState(0);
+    const [pricePerNight, setPricePerNight] = useState();
+    const navigate = useNavigate()
+
+    const handleNext =() => { navigate('/payment') }
 
     useEffect(() => {
         // Scroll to the top of the page when the component mounts
@@ -64,10 +68,7 @@ const ListingDetails = () => {
         }
     }, [arrivalDate, departureDate, calculateTotalPrice]);
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
-
+    
     const [notificationVisible, setNotificationVisible] = useState(false);
 
     useEffect(() => {
@@ -89,7 +90,7 @@ const ListingDetails = () => {
                 />
             )}
             <Header />
-            <Modal isOpen={isModalOpen} onClose={closeModal} />
+            
             <div className='topFlexWith'>
                 <img src={listing.image} alt={listing.title} />
                 <div className='FlexItemsThings'>
@@ -123,7 +124,7 @@ const ListingDetails = () => {
                         {totalPrice && (
                             <>
                                 <p style={{ textWrap: 'nowrap' }}>Total Price: ${totalPrice} <span style={{ fontSize: 13, color: 'black' }}>+taxes/fees</span></p>
-                                <button type='submit' onClick={openModal}>Book Now</button>
+                                <button onClick={handleNext} type='submit'>Book Now</button>
                             </>
                         )}
                     </div>
