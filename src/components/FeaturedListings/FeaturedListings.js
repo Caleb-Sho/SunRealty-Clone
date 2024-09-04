@@ -680,11 +680,11 @@ import { Link } from 'react-router-dom';
           {isFilterPopupOpen && (
             <div ref={filterRef} className="filter-popup">
               <ul>
-                <li onClick={() => handleFilterSelection('Yosemite')}>Yosemite, California</li>
-                <li onClick={() => handleFilterSelection('Zion, UT')}>Zion, Utah</li>
-                <li onClick={() => handleFilterSelection('Ashburn')}>Ashburn, Virginia</li>
-                <li onClick={() => handleFilterSelection('Moclips')}>Moclips, Washington</li>
-                <li onClick={() => handleFilterSelection('Nags Head')}>Nags Head, North Carolina</li>
+                <li onClick={() => handleFilterSelection('Yosemite')}>Yosemite, CA</li>
+                <li onClick={() => handleFilterSelection('Zion, UT')}>Zion, UT</li>
+                <li onClick={() => handleFilterSelection('Ashburn')}>Ashburn, VR</li>
+                <li onClick={() => handleFilterSelection('Moclips')}>Moclips, WA</li>
+                <li onClick={() => handleFilterSelection('Nags Head')}>Nags Head, NC</li>
               </ul>
             </div>
           )}
