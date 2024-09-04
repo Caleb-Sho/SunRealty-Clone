@@ -682,7 +682,7 @@ import { Link } from 'react-router-dom';
               <ul>
                 <li onClick={() => handleFilterSelection('Yosemite')}>Yosemite, CA</li>
                 <li onClick={() => handleFilterSelection('Zion, UT')}>Zion, UT</li>
-                <li onClick={() => handleFilterSelection('Ashburn')}>Ashburn, VR</li>
+                <li onClick={() => handleFilterSelection('Ashburn')}>Ashburn, VA</li>
                 <li onClick={() => handleFilterSelection('Moclips')}>Moclips, WA</li>
                 <li onClick={() => handleFilterSelection('Nags Head')}>Nags Head, NC</li>
               </ul>
