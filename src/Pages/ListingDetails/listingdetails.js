@@ -54,8 +54,8 @@ const ListingDetails = () => {
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
         if (!isNaN(pricePerNight) && !isNaN(diffDays)) {
-            const calculatedTotalPrice = diffDays * (pricePerNight +127 );
-            setTotalPrice(calculatedTotalPrice);
+            const calculatedTotalPrice = (diffDays + 0.17) * (pricePerNight * 1.06 );
+            setTotalPrice(calculatedTotalPrice.toFixed(2));
         } else {
             console.warn('Calculation error: Invalid number of bedrooms or days');
             setTotalPrice(0);
