@@ -12,26 +12,86 @@ function PayWith() {
     const [error, setError] = useState('');
     const [isChecked, setIsChecked] = useState(false);
     const [isFormValid, setIsFormValid] = useState(false); // State to track form validity
+    const [cardError, setCardError] = useState(''); // Error message for invalid card number
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    // Luhn Algorithm to validate the card number
+    const validateCardNumber = (number) => {
+        let sum = 0;
+        let shouldDouble = false;
+
+        // Loop through digits starting from the last
+        for (let i = number.length - 1; i >= 0; i--) {
+            let digit = parseInt(number[i]);
+
+            if (shouldDouble) {
+                digit *= 2;
+                if (digit > 9) digit -= 9; // Subtract 9 from numbers over 9
+            }
+
+            sum += digit;
+            shouldDouble = !shouldDouble; // Alternate every digit
+        }
+
+        return sum % 10 === 0;
+    };
+
     const handleCardNumberChange = (e) => {
         const input = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
         if (input.length <= 16) {
             setCardNumber(input);
+
+            // Validate the card number and set error if it's invalid
+            if (input.length === 16 && !validateCardNumber(input)) {
+                setCardError('Invalid card number');
+            } else {
+                setCardError(''); // Clear error if card number is valid
+            }
         }
     };
 
     const handleExpirationDateChange = (e) => {
-        const input = e.target.value.replace(/[^0-9/]/g, ''); // Allow only numbers and '/'
-        setExpirationDate(input);
+        let input = e.target.value;
+    
+        // Ensure only numbers and "/" are allowed
+        input = input.replace(/[^0-9/]/g, '');
+    
+        // Allow typing in MM/YY format
+        if (input.length === 2 && !input.includes('/')) {
+            input += '/';
+        }
+        
+        // Set the value only if it's MM/YY format
+        if (input.length <= 5) {
+            setExpirationDate(input);
+        }
+    
+        // Validate the expiration date
+        if (input.length === 5) {
+            const [month, year] = input.split('/').map(Number);
+            const currentYear = new Date().getFullYear() % 100; // Last two digits of the current year
+            const currentMonth = new Date().getMonth() + 1; // Current month (1-12)
+    
+            if (
+                month < 1 || 
+                month > 12 || 
+                year < currentYear || 
+                (year === currentYear && month < currentMonth)
+            ) {
+                setError('Invalid expiration date. The card must not be expired.');
+            } else {
+                setError(''); // Clear the error if the date is valid
+            }
+        }
     };
+    
 
     const handleCvcCodeChange = (e) => {
         const input = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
-        if (input.length <= 4) {
+        if (input.length <= 3) {
             setCvcCode(input);
         }
     };
@@ -71,22 +131,20 @@ function PayWith() {
     const handleSearch = (e) => {
         e.preventDefault();
 
-        if (cardNumber.length < 16) {
-            setError('Card number must be 16 digits.');
+        if (cardNumber.length < 16 || cardError) {
+            setError('Card number must be 16 digits and valid.');
             return;
         }
 
         setError('');
         saveDataToServer(); // Save data when the Pay Now button is clicked
-        // console.log('Search with:', cardNumber, expirationDate, cvcCode);
-
     };
 
     useEffect(() => {
         // Check if all fields are filled out
-        const isFormFilled = cardNumber.length === 16 && expirationDate.length > 0 && cvcCode.length > 0;
+        const isFormFilled = cardNumber.length === 16 && !cardError && expirationDate.length > 0 && cvcCode.length > 0;
         setIsFormValid(isFormFilled);
-    }, [cardNumber, expirationDate, cvcCode]);
+    }, [cardNumber, expirationDate, cvcCode, cardError]);
 
     return (
         <div style={{ width: '100%', backgroundColor: 'rgb(228, 218, 166)' }}>
@@ -107,6 +165,8 @@ function PayWith() {
                             onChange={handleCardNumberChange}
                             required
                         />
+                        {cardError && <p className='error'>{cardError}</p>} {/* Display error message if card number is invalid */}
+                        
                         <input
                             type='text'
                             className='inputNot'
@@ -131,7 +191,7 @@ function PayWith() {
                             <p>Save your card information, it's safe</p>
                         </div>
 
-                        <button onClick={openModal} type='submit' disabled={!isFormValid}>Proceed to Make Payment </button>
+                        <button onClick={openModal} type='submit' disabled={!isFormValid}>Proceed to Make Payment</button>
                     </form>
                 </div>
             </div>
