@@ -175,10 +175,10 @@ const Header = () => {
                                     'Till Next time 387-B
                                 </option>
                                 <option>
-                                    10-42 317-D
+                                    10-4px2  marginBottom:'3',317-D
                                 </option>
                                 <option>
-                                    12 Fourth Ave SS-437
+                                    12 Fourth Ave SS-4px37 marginBottom:'3',
                                 </option>
                                 <option>
                                     180 Degrees Of Oceans OCE-103
@@ -366,7 +366,7 @@ const Header = () => {
                     <Link to='/'> <div className='linkDiv' onClick={handleToggle5}> <p> Real Estate Sales</p><IoMdArrowDropright /></div></Link>
                 </div>
                 <div className={` ${'links'} ${isMenuOpen1 ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/> Back </p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Vacation Rentals </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Listings by Name </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> 2025 Advanced Year Reservations</p><IoMdArrowDropright /></div></Link>
@@ -381,7 +381,7 @@ const Header = () => {
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Sun Realty Offers Waterpark Perk for All Guests</p><IoMdArrowDropright /></div></Link>
                 </div>
                 <div className={` ${'links'} ${isMenuOpen2 ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/> Back </p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Outer Banks Info </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Towns and Villages </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Blog</p><IoMdArrowDropright /></div></Link>
@@ -391,7 +391,7 @@ const Header = () => {
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> OBX Vacay Channel</p><IoMdArrowDropright /></div></Link>
                 </div>
                 <div className={` ${'links'} ${isMenuOpen3 ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/> Back </p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Vacationer's Guide </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> About Us</p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Jobs at Sun Realty</p><IoMdArrowDropright /></div></Link>
@@ -403,7 +403,7 @@ const Header = () => {
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> JOin Our Email List</p><IoMdArrowDropright /></div></Link>
                 </div>
                 <div className={` ${'links'} ${isMenuOpen4 ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/> Back </p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> List With Sun </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Sun Advantage Program Overview</p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Marketting Your Home</p><IoMdArrowDropright /></div></Link>
@@ -414,7 +414,7 @@ const Header = () => {
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Owner Resources</p><IoMdArrowDropright /></div></Link>
                 </div>
                 <div className={` ${'links'} ${isMenuOpen5 ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/><IoIosArrowBack style={{marginLeft: '-4px', marginRight:'-4px', marginBottom:3, color: 'lightblue', fontSize: 12}}/> Back </p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Real Estate Sales </p> <IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Long Term Rentals</p><IoMdArrowDropright /></div></Link>
                 </div>

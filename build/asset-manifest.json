@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "./static/css/main.ec879c16.css",
-    "main.js": "./static/js/main.0003b18a.js",
+    "main.js": "./static/js/main.62457ef8.js",
     "static/js/453.4516b150.chunk.js": "./static/js/453.4516b150.chunk.js",
     "static/media/sunHome.jpg": "./static/media/sunHome.71cb96efabd40b342bde.jpg",
     "index.html": "./index.html",
     "main.ec879c16.css.map": "./static/css/main.ec879c16.css.map",
-    "main.0003b18a.js.map": "./static/js/main.0003b18a.js.map",
+    "main.62457ef8.js.map": "./static/js/main.62457ef8.js.map",
     "453.4516b150.chunk.js.map": "./static/js/453.4516b150.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec879c16.css",
-    "static/js/main.0003b18a.js"
+    "static/js/main.62457ef8.js"
   ]
 }
