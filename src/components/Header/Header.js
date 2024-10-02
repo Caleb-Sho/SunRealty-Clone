@@ -11,6 +11,7 @@ import { FaHeadset } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { IoMdArrowDropright } from "react-icons/io";
 import Notification from '../Notification/NotificationShow';
+import { IoIosArrowBack } from "react-icons/io";
 
 const CustomNavDropdown = styled(NavDropdown)`
   .dropdown-toggle::after {
@@ -24,6 +25,12 @@ const CustomNavDropdown = styled(NavDropdown)`
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen1, setIsMenuOpen1] = useState(false);
+    const [isMenuOpen2, setIsMenuOpen2] = useState(false);
+    const [isMenuOpen3, setIsMenuOpen3] = useState(false);
+    const [isMenuOpen4, setIsMenuOpen4] = useState(false);
+    const [isMenuOpen5, setIsMenuOpen5] = useState(false);
+    // const [isMenuOpen6, setIsMenuOpen6] = useState(false);
     // const [isSubMenuOpen1, setIsSubMenuOpen1] = useState(false);
     const [notificationVisible, setNotificationVisible] = useState(false);
     // const [animate, setAnimate] = useState(false);
@@ -46,7 +53,41 @@ const Header = () => {
 
     const handleToggle = () => {
         setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen1(false);
+        setIsMenuOpen5(false);
+        setIsMenuOpen4(false);
+        setIsMenuOpen3(false);
+        setIsMenuOpen2(false); 
+        
     };
+    const handleToggle1 = () => {
+        setIsMenuOpen1(!isMenuOpen1);
+        setIsMenuOpen(false);
+    };
+    const handleToggle2 = () => {
+        setIsMenuOpen2(!isMenuOpen2);
+        setIsMenuOpen(false);
+    };
+    const handleToggle3 = () => {
+        setIsMenuOpen3(!isMenuOpen3);
+        setIsMenuOpen(false);
+    };
+    const handleToggle4 = () => {
+        setIsMenuOpen4(!isMenuOpen4);
+        setIsMenuOpen(false);
+    };
+    const handleToggle5 = () => {
+        setIsMenuOpen5(!isMenuOpen5);
+        setIsMenuOpen(false);
+    };
+     const handleBack = () =>{
+        setIsMenuOpen(true);
+        setIsMenuOpen1(false);
+        setIsMenuOpen5(false);
+        setIsMenuOpen4(false);
+        setIsMenuOpen3(false);
+        setIsMenuOpen2(false); 
+     }
 
     const tabStyles = {
         navItemStyle: {
@@ -137,7 +178,7 @@ const Header = () => {
                                     10-42 317-D
                                 </option>
                                 <option>
-                                    12 Fourth Ave SS-237
+                                    12 Fourth Ave SS-437
                                 </option>
                                 <option>
                                     180 Degrees Of Oceans OCE-103
@@ -318,11 +359,64 @@ const Header = () => {
                 </div>
                 <div className='linedecoration' />
                 <div className={` ${'links'} ${isMenuOpen ? 'linksVisibility' : 'linksNotVisibility'}`}>
-                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p>Vacation Rentals </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleToggle1}> <p>Vacation Rentals </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleToggle2}> <p> Outer Banks Info </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleToggle3}> <p>Vacationer's Guide</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleToggle4}> <p>List With Sun</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleToggle5}> <p> Real Estate Sales</p><IoMdArrowDropright /></div></Link>
+                </div>
+                <div className={` ${'links'} ${isMenuOpen1 ? 'linksVisibility' : 'linksNotVisibility'}`}>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Vacation Rentals </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Listings by Name </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> 2025 Advanced Year Reservations</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> New LIstings</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Special Offers by Week</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Partial Week & Freestule Rentals</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Frequently Asked Questions</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Military and First Responder Discounts</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Sun Select</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Travel Insurance</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Beach Gear Rentals from Vayk Life</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Sun Realty Offers Waterpark Perk for All Guests</p><IoMdArrowDropright /></div></Link>
+                </div>
+                <div className={` ${'links'} ${isMenuOpen2 ? 'linksVisibility' : 'linksNotVisibility'}`}>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
                     <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Outer Banks Info </p> <IoMdArrowDropright /></div></Link>
-                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p>Vacationer's Guide</p><IoMdArrowDropright /></div></Link>
-                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p>List With Sun</p><IoMdArrowDropright /></div></Link>
-                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Real Estate Sales</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Towns and Villages </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Blog</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p>Things to Do</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Events</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Pet Friendly Outer anks Vacation Rentals</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> OBX Vacay Channel</p><IoMdArrowDropright /></div></Link>
+                </div>
+                <div className={` ${'links'} ${isMenuOpen3 ? 'linksVisibility' : 'linksNotVisibility'}`}>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Vacationer's Guide </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> About Us</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Jobs at Sun Realty</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Sun Gives Back</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Rental Policies</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Vacation Payment Plans</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Sun Realty Reviews</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> About Outer Banks Rentals</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> JOin Our Email List</p><IoMdArrowDropright /></div></Link>
+                </div>
+                <div className={` ${'links'} ${isMenuOpen4 ? 'linksVisibility' : 'linksNotVisibility'}`}>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> List With Sun </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Sun Advantage Program Overview</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Marketting Your Home</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Reservations and Owner Payments</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Guest and Owner Relations</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Caring for Your Home</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Meet the Sun Team</p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Owner Resources</p><IoMdArrowDropright /></div></Link>
+                </div>
+                <div className={` ${'links'} ${isMenuOpen5 ? 'linksVisibility' : 'linksNotVisibility'}`}>
+                    <Link to='/'> <div className='linkDiv' onClick={handleBack}> <p><IoIosArrowBack style={{margin: '-4'}}/><IoIosArrowBack style={{margin: '-4'}}/> Back </p><IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Real Estate Sales </p> <IoMdArrowDropright /></div></Link>
+                    <Link to='/'> <div className='linkDiv' onClick={handleShareClick}> <p> Long Term Rentals</p><IoMdArrowDropright /></div></Link>
                 </div>
             </div>
 

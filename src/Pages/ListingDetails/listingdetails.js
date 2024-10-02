@@ -32,7 +32,7 @@ const ListingDetails = () => {
         const bedrooms = parseInt(bedroomsString, 10);
 
         if (!isNaN(bedrooms)) {
-            const calculatedPricePerNight = 114 * bedrooms; // Calculate price per night
+            const calculatedPricePerNight = 134 * bedrooms; // Calculate price per night
             setPricePerNight(calculatedPricePerNight);
         } else {
             console.warn('Invalid number of bedrooms');
