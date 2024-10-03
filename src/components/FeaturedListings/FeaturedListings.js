@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
   const listingsData = [
     {
       id: 1,
-      title: 'OBX-ta-Sea 433-A5',
+      title: 'OBX-ta-Sea 433-A55',
       ratings: '(11 Reviews)',
       image: 'https://images.rezfusion.com/?optimize=true&rotate=true&quality=70&width=420&source=https%3A//img.trackhs.com/x/https%3A//track-pm.s3.amazonaws.com/sun/image/7996131c-aa90-4bd5-9dcf-5619e4167b0c&settings=default',
       description: 'Oceanfront in Moclips, Washington',
