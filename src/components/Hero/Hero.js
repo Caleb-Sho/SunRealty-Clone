@@ -25,7 +25,7 @@ const Hero = () => {
   //   }, 9000); // Hide the notification after 7 seconds
   // };
   const handleShareClick = () => {
-    const email = "sunrealtysupport@gmail.com";
+    const email = "sunrealtysupportteam@outlook.com";
     const subject = "Booking Issue";
     const body = `Hi,\n\nI am having issues with my booking reservation`; // Added newline characters
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
