@@ -1,73 +1,96 @@
 .modalOverlay {
+  position: fixed;
+  top: 30%;
+  left: 32.5%;
+  /* right: 0;
+    bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  z-index: 1000; /* Ensure the overlay is on top of everything */
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Ensure modal content is above the overlay */
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
+
+.modalContent {
+  padding: 10px;
+  color: white;
+  text-align: center;
+  z-index: 9999;
+  margin-top: 20px;
+  position: relative;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* position: relative; */
+  /* font-size: 20px; */
+  /* top: 0; */
+}
+.modalContent h2 {
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.modalContent img {
+  width: 80px;
+  height: 80px;
+}
+.shareButton {
+  margin-top: 10px;
+  padding: 10px 20px; /* More padding for a better size */
+  background-color: #87ceeb; /* Sky blue */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px; /* Slightly larger text */
+  font-weight: bold; /* Bold text for emphasis */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.shareButton:hover {
+  background-color: #00bfff; /* A darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.shareButton:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 191, 255, 0.5); /* Subtle glow effect */
+}
+
+@media (max-width: 800px) {
+  .modalOverlay {
     position: fixed;
     top: 30%;
-    left: 32.5%;
+    left: 10%;
+    width: 80%;
+    margin: auto;
     /* right: 0;
-    bottom: 0; */
+        bottom: 0; */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
     z-index: 1000; /* Ensure the overlay is on top of everything */
-}
-
-.modal {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    max-width: 500px;
-    width: 100%;
-    padding: 20px;
-    position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 1001; /* Ensure modal content is above the overlay */
-}
-
-.closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-    color: white;
-}
-
-.modalContent {
-    padding: 10px;
-    color: white;
-    text-align: center;
-    z-index: 9999;
-    margin-top: 20px;
-    position: relative;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* position: relative; */
-    /* font-size: 20px; */
-    /* top: 0; */
-}
-.modalContent h2{
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.modalContent img{
-    width: 80px;
-    height: 80px;
-}
-@media (max-width: 800px) {
-    .modalOverlay {
-        position: fixed;
-        top: 30%;
-        left: 10%;
-        width: 80%;
-        margin: auto ;
-        /* right: 0;
-        bottom: 0; */
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-        z-index: 1000; /* Ensure the overlay is on top of everything */
-    }
+  }
 }
