@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 
 // import imageSrc from "../../../src/Assets/listings/Pullman Magenta Shores Resort/destination.png";
+import imageSrc from "../../../src/Assets/listings/Crowne Plaza Terrigal/view.png";
 import imageSrc1 from "../../../src/Assets/listings/Bells at Killcare Boutique Hotel/destinatioon.png";
 import imageSrc2 from "../../../src/Assets/listings/The Retreat at Wisemans/sittingroom.png";
 import imageSrc3 from "../../../src/Assets/listings/Crowne Plaza Terrigal/swimmingpool.png";
@@ -271,10 +272,9 @@ export const ListingsProvider = ({ children }) => {
     },
     {
       id: 29,
-      title: "Home By The Sea 441-A",
+      title: "Home Traveler A",
       ratings: "(11 Reviews)",
-      image:
-        "https://images.rezfusion.com/?optimize=true&rotate=true&quality=70&width=420&source=https%3A//img.trackhs.com/x/https%3A//track-pm.s3.amazonaws.com/sun/image/b9a8f2a7-81e8-4200-a2d9-3611e55a2e55&settings=default",
+      image: imageSrc,
       description: "Semi ocean front in Zion, UT",
       conditions: "4 Bedrooms . 3 Baths . Sleeps 8",
     },

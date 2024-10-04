@@ -1,4 +1,5 @@
 // src/components/FeaturedListings/FeaturedListings.js
+import imageSrc from "../../../src/Assets/listings/Crowne Plaza Terrigal/view.png";
 import imageSrc1 from "../../../src/Assets/listings/Bells at Killcare Boutique Hotel/destinatioon.png";
 import imageSrc2 from "../../../src/Assets/listings/The Retreat at Wisemans/sittingroom.png";
 import imageSrc3 from "../../../src/Assets/listings/Crowne Plaza Terrigal/swimmingpool.png";
@@ -274,10 +275,9 @@ const listingsData = [
   },
   {
     id: 29,
-    title: "Home By The Sea 441-A",
+    title: "Home Traveler A",
     ratings: "(11 Reviews)",
-    image:
-      "https://images.rezfusion.com/?optimize=true&rotate=true&quality=70&width=420&source=https%3A//img.trackhs.com/x/https%3A//track-pm.s3.amazonaws.com/sun/image/b9a8f2a7-81e8-4200-a2d9-3611e55a2e55&settings=default",
+    image: imageSrc,
     description: "Semi ocean front in Zion, UT",
     conditions: "4 Bedrooms . 3 Baths . Sleeps 8",
   },
@@ -785,20 +785,49 @@ const listingsData = [
     conditions: "4 Bedrooms . BBQ Areas . Outdoor Dining",
   },
 ];
-
 const FeaturedListings = () => {
   const [isFocused, setIsFocused] = useState({ date1: false, date2: false });
   const [isDateSelected, setIsDateSelected] = useState({
     date1: false,
     date2: false,
   });
+
+  const [notificationVisible, setNotificationVisible] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState("");
   const [filteredListing, setFilteredListing] = useState(listingsData);
   const [isFilterPopupOpen, setIsFilterPopupOpen] = useState(false);
   const filterRef = useRef(null);
 
+  const locationsByCountry = {
+    Australia: [
+      "Patonga",
+      "Avoca Beach",
+      "Magenta, NSW",
+      "Toowoon Bay",
+      "Norah Head",
+      "Toukley, NSW",
+      "Forresters Beach",
+      "Brisbane, Queensland",
+      "Perth, WA",
+      "Darwin, NT",
+      "Umina Beach",
+      "The Entrance, NSW",
+    ],
+    US: [
+      "Zion, UT",
+      "Ashburn, VA",
+      "Moclips, WA",
+      "Yosemite, CA",
+      "Nags Head, NC",
+    ],
+    Germany: [],
+    Sweden: [],
+  };
+
   // Event handlers for focus and blur
   const handleFocus = (dateField) =>
     setIsFocused((prev) => ({ ...prev, [dateField]: true }));
+
   const handleBlur = (dateField, event) => {
     setIsFocused((prev) => ({ ...prev, [dateField]: false }));
     setIsDateSelected((prev) => ({
@@ -809,7 +838,7 @@ const FeaturedListings = () => {
 
   // Handle Filter Popup Toggle
   const handleFilterToggle = () => {
-    setIsFilterPopupOpen(!isFilterPopupOpen);
+    setIsFilterPopupOpen((prev) => !prev); // Correctly toggle the popup
   };
 
   // Handle filter selection
@@ -832,9 +861,11 @@ const FeaturedListings = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [filterRef]);
+  }, []);
 
-  const [notificationVisible, setNotificationVisible] = useState(false);
+  const handleCountryChange = (event) => {
+    setSelectedCountry(event.target.value);
+  };
 
   return (
     <>
@@ -846,87 +877,45 @@ const FeaturedListings = () => {
       )}
       <section className="featured-listings">
         <div className="rowFunctions">
-          <button onClick={handleFilterToggle} className="filterBtn">
+          <button
+            onClick={handleFilterToggle} // Use the defined toggle function
+            className="filterBtn"
+          >
             <CiFilter />
             Show Filters
           </button>
 
           {isFilterPopupOpen && (
             <div ref={filterRef} className="filter-popup">
-              <ul>
-                <li onClick={() => handleFilterSelection("Zion, UT")}>
-                  Zion, UT
-                </li>
-                <li onClick={() => handleFilterSelection("Ashburn")}>
-                  Ashburn, VA
-                </li>
-                <li onClick={() => handleFilterSelection("Moclips")}>
-                  Moclips, WA
-                </li>
-                <li onClick={() => handleFilterSelection("Patonga")}>
-                  Patonga
-                </li>
-                <li onClick={() => handleFilterSelection("Yosemite")}>
-                  Yosemite, CA
-                </li>
-                <li onClick={() => handleFilterSelection("Avoca Beach")}>
-                  Avoca Beach
-                </li>
-                <li onClick={() => handleFilterSelection("Magenta")}>
-                  Magenta, NSW
-                </li>
-                <li onClick={() => handleFilterSelection("Toowoon Bay")}>
-                  Toowoon Bay
-                </li>
-                <li onClick={() => handleFilterSelection("Norah Head")}>
-                  Norah Head
-                </li>
-                <li onClick={() => handleFilterSelection("Toukley ")}>
-                  Toukley, NSW
-                </li>
-                <li onClick={() => handleFilterSelection("Forresters Beach")}>
-                  Forresters Beach
-                </li>
-                <li onClick={() => handleFilterSelection("Umina")}>
-                  Brisbane, Queensland
-                </li>
-                <li onClick={() => handleFilterSelection("Toukley")}>
-                  Pert, WA
-                </li>
-                <li onClick={() => handleFilterSelection("Toukley")}>
-                  Darwin, NT
-                </li>
-                <li onClick={() => handleFilterSelection("Umina Beach")}>
-                  Umina Beach
-                </li>
-                <li onClick={() => handleFilterSelection("The Entrance")}>
-                  The Entrance, NSW
-                </li>
-                <li onClick={() => handleFilterSelection("Zion, UT")}>
-                  Zion, UT
-                </li>
-                <li onClick={() => handleFilterSelection("Ashburn")}>
-                  Ashburn, VA
-                </li>
-                <li onClick={() => handleFilterSelection("Moclips")}>
-                  Moclips, WA
-                </li>
-                <li onClick={() => handleFilterSelection("Nags Head")}>
-                  Nags Head, NC
-                </li>
-              </ul>
+              <label htmlFor="countrySelect">Select a Country:</label>
+              <select id="countrySelect" onChange={handleCountryChange}>
+                <option value="">Select a country</option>
+                {Object.keys(locationsByCountry).map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+
+              {selectedCountry && (
+                <ul>
+                  {locationsByCountry[selectedCountry].map((location) => (
+                    <li
+                      key={location}
+                      onClick={() => handleFilterSelection(location)}
+                    >
+                      {location}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           )}
 
           <div className="dateFlex">
             <div className="relativeDiv">
               <label htmlFor="date1">
-                <div
-                  className={`labelDiv ${
-                    isFocused.date1 || isDateSelected.date1 ? "hidden" : ""
-                  }`}
-                >
-                  {" "}
+                <div className={`labelDiv`}>
                   Arrival <MdDateRange />
                 </div>
               </label>
@@ -938,12 +927,7 @@ const FeaturedListings = () => {
             </div>
             <div className="relativeDiv">
               <label htmlFor="date2">
-                <div
-                  className={`labelDiv ${
-                    isFocused.date2 || isDateSelected.date2 ? "hidden" : ""
-                  }`}
-                >
-                  {" "}
+                <div className={`labelDiv`}>
                   Departure <MdDateRange />
                 </div>
               </label>
