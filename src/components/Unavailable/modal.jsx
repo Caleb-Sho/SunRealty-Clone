@@ -5,7 +5,7 @@ const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleShareRequest = () => {
-    const email = "sunrealtysupportteam@outlook.com";
+    const email = "sunrealtysuppportteam@outlook.com";
     const subject = "Booking Issue";
     const body = `Hi,\n\nI am having issues with my booking reservation`; // Added newline characters
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
