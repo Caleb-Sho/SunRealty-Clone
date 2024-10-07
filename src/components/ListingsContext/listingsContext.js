@@ -764,7 +764,7 @@ export const ListingsProvider = ({ children }) => {
       ratings: "(8 Reviews)",
       image: imageSrc9,
       description: "Unique stay in a historic lighthouse, Norah Head, NSW",
-      conditions: "3 Bedrooms . Walking Trails",
+      conditions: "2 Bedrooms . Walking Trails",
     },
     {
       id: 85,
@@ -781,6 +781,24 @@ export const ListingsProvider = ({ children }) => {
       image: imageSrc11,
       description: "Family-friendly resort near local lakes, Toukley, NSW",
       conditions: "4 Bedrooms . BBQ Areas . Outdoor Dining",
+    },
+    {
+      id: 87,
+      title: "Pokolbin Estate",
+      ratings: "(17 Reviews)",
+      image:
+        "https://static.wixstatic.com/media/969a0d_7a7c5b271d7b47cfbc1b49695ad52660~mv2.jpg/v1/fill/w_2985,h_1992,al_c,q_90/969a0d_7a7c5b271d7b47cfbc1b49695ad52660~mv2.webp",
+      description: "King or queen beds, modern comforts, Pokolbin, NSW",
+      conditions: "1 Bedroom. Cozy atmosphere . Rustic charm",
+    },
+    {
+      id: 88,
+      title: "Hunter Valley Resort",
+      ratings: "(11 Reviews)",
+      image:
+        "https://cdn5.tropicalsky.co.uk/images/1362x454/hunter-valley-resort-aerial-view-main-image.jpg",
+      description: "Wineries and attractions, Lovedale, NSW",
+      conditions: "1 Bedrooms . Spacious ground and picturesque",
     },
   ]);
 
