@@ -789,7 +789,7 @@ export const ListingsProvider = ({ children }) => {
       image:
         "https://static.wixstatic.com/media/969a0d_7a7c5b271d7b47cfbc1b49695ad52660~mv2.jpg/v1/fill/w_2985,h_1992,al_c,q_90/969a0d_7a7c5b271d7b47cfbc1b49695ad52660~mv2.webp",
       description: "King or queen beds, modern comforts, Pokolbin, NSW",
-      conditions: "1 Bedroom. Cozy atmosphere . Rustic charm",
+      conditions: "2 Bedroom. Cozy atmosphere . Rustic charm",
     },
     {
       id: 88,
@@ -798,7 +798,7 @@ export const ListingsProvider = ({ children }) => {
       image:
         "https://cdn5.tropicalsky.co.uk/images/1362x454/hunter-valley-resort-aerial-view-main-image.jpg",
       description: "Wineries and attractions, Lovedale, NSW",
-      conditions: "1 Bedrooms . Spacious ground and picturesque",
+      conditions: "2 Bedrooms . Spacious ground and picturesque",
     },
   ]);
 

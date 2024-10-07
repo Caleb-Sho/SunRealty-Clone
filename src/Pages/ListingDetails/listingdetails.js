@@ -35,7 +35,7 @@ const ListingDetails = () => {
 
     if (!isNaN(bedrooms)) {
       // Calculate price per night 350
-      const calculatedPricePerNight = 620 * bedrooms; // Calculate price per night
+      const calculatedPricePerNight = 250 * bedrooms; // Calculate price per night
       setPricePerNight(calculatedPricePerNight);
     } else {
       console.warn("Invalid number of bedrooms");
