@@ -581,7 +581,7 @@ export const ListingsProvider = ({ children }) => {
       ratings: "(15 Reviews)",
       image:
         "https://images.rezfusion.com/?optimize=true&rotate=true&quality=70&width=420&source=https%3A//img.trackhs.com/x/https%3A//track-pm.s3.amazonaws.com/sun/image/c98343e2-bcb7-405c-9714-b54b48496479&settings=default",
-      description: "Oceanfront in Nags Head",
+      description: "Oceanfront in Nags Head, NC",
       conditions: "2 Bedrooms . 2 Baths . Sleeps 4",
     },
     {
@@ -599,7 +599,7 @@ export const ListingsProvider = ({ children }) => {
       ratings: "(12 Reviews)",
       image:
         "https://images.rezfusion.com/?optimize=true&rotate=true&quality=70&width=420&source=https%3A//img.trackhs.com/x/https%3A//track-pm.s3.amazonaws.com/sun/image/3c869a01-6c47-47e9-87f0-c687a170cd33&settings=default",
-      description: "Semi ocean front in Nags Head",
+      description: "Semi ocean front in Nags Head, NC",
       conditions: "3 Bedrooms . 3 Baths . Sleeps 6",
     },
     {
@@ -799,6 +799,25 @@ export const ListingsProvider = ({ children }) => {
         "https://cdn5.tropicalsky.co.uk/images/1362x454/hunter-valley-resort-aerial-view-main-image.jpg",
       description: "Wineries and attractions, Lovedale, NSW",
       conditions: "2 Bedrooms . Spacious ground and picturesque",
+    },
+    {
+      id: 89,
+      title: "Lansdowne Resort and Spa",
+      ratings: "(21 Reviews)",
+      image:
+        "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/virginia/Lansdowne_Club_Exterior_1b5398db-5056-a36a-07a7a5bce296d78b.jpg",
+      description: "Potomac River View, Lansdowne, Ashburn, VA",
+      conditions:
+        "2 Bedrooms .Spa Services and Picturesque walking trails Ashburn",
+    },
+    {
+      id: 90,
+      title: "Bluemont Vineyard",
+      ratings: "(21 Reviews)",
+      image:
+        "https://images.squarespace-cdn.com/content/v1/5bc60849b7c92c6886d6b0ad/1663262788209-UEXXKD5ISQ6GJJWPHZZR/951+Tasting+Room+Arial+.jpg?format=2500w",
+      description: "Scenic grounds, Bluemont, Ashburn, VA",
+      conditions: "3 Bedrooms . Wine tastings and outdoor seatings Ashburn",
     },
   ]);
 
