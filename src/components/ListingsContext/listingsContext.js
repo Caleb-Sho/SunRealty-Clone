@@ -819,6 +819,15 @@ export const ListingsProvider = ({ children }) => {
       description: "Scenic grounds, Bluemont, Ashburn, VA",
       conditions: "3 Bedrooms . Wine tastings and outdoor seatings Ashburn",
     },
+    {
+      id: 91,
+      title: "Cottesloe Beach Hotel",
+      ratings: "(11 Reviews)",
+      image:
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/58771281.jpg?k=55e8f7cd7cc273417590050f21a3137dbc2978dcb7a76745624a350af2642d11&o=&hp=1",
+      description: "Indian Ocean, Art Gallery, Perth, WA",
+      conditions: "3 Bedrooms . Spa treatments and outdoor seatings",
+    },
   ]);
 
   return (
